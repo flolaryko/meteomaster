@@ -1,0 +1,40 @@
+.carousel-caption.text-start {
+    bottom: 175px;
+}
+
+.carousel-caption.text-end {
+    bottom: 175px;
+}
+
+.carousel-caption {
+    bottom: 175px;
+}
+
+/* color rectangle accueil*/
+.p-5.mb-4.bg-light.rounded-3 {
+    background-color: #003f89!important;
+}  
+
+ /* pos form*/
+.form{
+    height: 50px;  
+    width: 50px;
+}
+
+.rond-lieu {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background: url(https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg);
+    background-position: center;
+    background-size: cover;
+    transition: 0.3s ease;
+}
+
+/* css du graphic*/
+#chartdiv
+{
+ width: 100%;
+ height: 500px;
+} 
