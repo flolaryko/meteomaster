@@ -1,5 +1,5 @@
 <?php
-require('../App/Models/LieuModel.php');
+require('Models/LieuModel.php');
 
 
 function Nomlieux() {
