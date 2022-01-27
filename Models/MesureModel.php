@@ -1,5 +1,5 @@
 <?php 
-namespace meteoscan;
+
 require_once('Database.php');
 
 class MesureModel extends Database {

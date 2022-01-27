@@ -2,9 +2,9 @@
 
 
 <?php
-require('Models/MesureModel.php'); 
+require_once('Models/MesureModel.php'); 
 
-$uneMesure = new meteoscan\MesureModel();  
+$uneMesure = new MesureModel();  
 
 $data = $uneMesure -> Une_Mesure($_POST['lieu'],date('Y-m-d')); 
 
@@ -32,7 +32,7 @@ $data = $uneMesure -> Une_Mesure($_POST['lieu'],date('Y-m-d'));
 
 <div id="chartdiv"></div>
 
-<?php die(var_dump($_POST['date']));?> 
+
 
 <?php require_once('footerView.php');?>
 

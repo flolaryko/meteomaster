@@ -6,9 +6,7 @@ $uneMesure = new MesureModel(); // graphique
 $uneMeteo = new MeteoModel();
 $unLieu = new LieuModel();
 
-$data = $uneMesure -> Une_Mesure('Prado',date('Y-m-d')); // graphique $data['champ_bdd']
-var_dump($data);
-die();
+
 
 $Lieux = $unLieu -> All_Lieux();
 
