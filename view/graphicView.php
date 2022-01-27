@@ -3,32 +3,44 @@
 
 <?php
 require_once('Models/MesureModel.php'); 
+require_once("Models/LieuModel.php");
 
+$unLieu= new LieuModel();
 $uneMesure = new MesureModel();  
 
-$data = $uneMesure -> Une_Mesure($_POST['lieu'],date('Y-m-d')); 
+$lieux= $unLieu->All_Lieux(); // liste lieu select 
 
+if(isset($_POST['lieu'],$_POST['date'])): //controle des champ vide
+$data = $uneMesure -> Une_Mesure($_POST['lieu'],$_POST['date']);?>
+<script>var dataRecu = <?php echo json_encode($data)?> </script>
+<?php endif?>
 
+    
 
-?>
 <?php $title = 'Détail graphique'; ?>
 <?php ob_start(); ?>
 <?php require_once('navBarView.php')?>
 
-<form method="post" action="graphicView.php" style="margin: 0 auto; width: 300px;">
+<form method="post" action="index.php?page=graphicView" style="margin: 0 auto; width: 300px;">
 
     <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Rechercher</h1>
-    <div class="form-floating">
-      <input type="text" name="lieu" class="form-control" id="floatingInput" placeholder="La ciotat">
-      <label for="floatingInput">Nom du lieu </label>
-    </div>
+    <label for="floatingInput">Choisir un lieu </label>
+<div class="form-floating">
+    <select name="lieu" class="form-control">
+       <?php foreach ($lieux as $lieu):  ?>  
+          <option value="<?php echo $lieu['libelle_lieu']?>"><?php echo $lieu['libelle_lieu']?></option>
+       <?php endforeach ?>
+    </select>
+</div>
 
     <div class="form-floating">
-      <input type="date" name="date" value="2021-07-22">
+      <input class="form-control" type="date" name="date" value="2022-01-26">
     </div>
    <br>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Rechercher</button>
 </form>
+
+
 
 <div id="chartdiv"></div>
 

@@ -4,7 +4,7 @@ require ('__DIR__/../Models/MesureModel.php');
 
 function topChaud($Lieu) {
 
-    $MesureModel = new meteoscan\MesureModel();
+    $MesureModel = new MesureModel();
     $Mesure = $MesureModel -> topChaud($Lieu);
     
     return $Mesure;

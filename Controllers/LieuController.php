@@ -4,7 +4,7 @@ require('Models/LieuModel.php');
 
 function Nomlieux() {
 
-    $lieuModel = new meteoscan\LieuModel();
+    $lieuModel = new LieuModel();
     $NomLieux = $lieuModel -> Lieux();
     
     return $NomLieux;

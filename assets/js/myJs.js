@@ -36,22 +36,22 @@ am5.ready(function() {
     // Data
     var data = [{
         mesure: "Température (°C)",
-        valeurM: 100
+        valeurM: dataRecu['temperature']
       }, {
         mesure: "Température ressenti (°C)",
-        valeurM: 23.2
+        valeurM: dataRecu['temperature_res']
       }, {
         mesure: "Humidité (%)",
-        valeurM: 22.1
+        valeurM: dataRecu['humidite']
       }, {
         mesure: "Nébulosité",
-        valeurM: 22.1
+        valeurM: dataRecu['nebulosite']
       },  {
         mesure: "Vitesse du vent (Km/h)",
-        valeurM: 22.1
+        valeurM: dataRecu['vitesse_vent']*3.6
       }, {
         mesure: "Rafale de vent (Km/h)",
-        valeurM: 22.1
+        valeurM: dataRecu['rafale_vent']*3.6
       }
     ];
     //direction vent, pression, visibilité

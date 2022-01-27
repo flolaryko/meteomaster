@@ -26,7 +26,7 @@
     height: 140px;
     margin: 0 auto;
     border-radius: 100%;
-    background: url(https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg);
+    background: url(https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg); /* a regler */
     background-position: center;
     background-size: cover;
     transition: 0.3s ease;
