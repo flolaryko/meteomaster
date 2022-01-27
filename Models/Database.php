@@ -1,5 +1,5 @@
 <?php
-
+namespace meteoscan;
 class Database {
 
     const DNS = 'localhost';

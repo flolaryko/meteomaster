@@ -1,5 +1,5 @@
 <?php 
-
+namespace meteoscan;
 require_once('Database.php');
 
 class MeteoModel extends Database {
@@ -15,7 +15,7 @@ class MeteoModel extends Database {
         $sqlQuery = 'SELECT * FROM meteo';
         $req = $this->db->prepare($sqlQuery);
         $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_ASSOC);
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
 
         return $data;
 
@@ -28,7 +28,7 @@ class MeteoModel extends Database {
         INNER JOIN meteo ON mesure.id_meteo = meteo.id_meteo WHERE date_mesure = DATE(NOW()) AND libelle_lieu= :lieu';
         $req = $this->db->prepare($sqlQuery);
         $req->execute(['lieu' => $libelleLieu]);
-        $data = $req->fetch(PDO::FETCH_ASSOC);
+        $data = $req->fetch(\PDO::FETCH_ASSOC);
 
         return $data;
 
@@ -41,7 +41,7 @@ class MeteoModel extends Database {
         $sqlQuery = 'SELECT id_meteo FROM meteo  WHERE icon = :icon';
         $req = $this->db->prepare($sqlQuery);
         $req->execute(['icon' => $icon]);
-        $data = $req->fetch(PDO::FETCH_ASSOC);
+        $data = $req->fetch(\PDO::FETCH_ASSOC);
 
         return $data;
 

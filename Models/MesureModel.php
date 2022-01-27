@@ -1,5 +1,5 @@
 <?php 
-
+namespace meteoscan;
 require_once('Database.php');
 
 class MesureModel extends Database {
@@ -26,7 +26,7 @@ class MesureModel extends Database {
         $sqlQuery = 'SELECT * FROM mesure JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu AND date_mesure = :date_mesure';
         $req =$this->db->prepare($sqlQuery);
         $req->execute(['lieu' => $libelleLieu, 'date_mesure'=> $date_mesure]);
-        $data = $req->fetch(PDO::FETCH_ASSOC);
+        $data = $req->fetch(\PDO::FETCH_ASSOC);
 
         return $data;
 
@@ -88,7 +88,7 @@ class MesureModel extends Database {
         $sqlQuery = 'SELECT max(temperature) AS maxtemp, date_mesure FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu GROUP BY date_mesure';
         $req = $this->db->prepare($sqlQuery);
         $req->execute(['lieu' => $libelleLieu]);
-        $data = $req->fetchAll(PDO::FETCH_ASSOC);
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
 
         return $data;
 

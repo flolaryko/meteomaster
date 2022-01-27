@@ -1,6 +1,6 @@
 <?php
 
-
+namespace meteoscan;
 require_once('Database.php');
 
 
@@ -17,7 +17,7 @@ class LieuModel extends Database {
         $sqlQuery = 'SELECT * FROM lieu';
         $req = $this->db->prepare($sqlQuery);
         $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_ASSOC);
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
 
         return $data;
 
@@ -66,7 +66,7 @@ class LieuModel extends Database {
         $sqlQuery = 'SELECT libelle_lieu FROM lieu';
         $req = $this->db->prepare($sqlQuery);
         $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_ASSOC);
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
 
         return $data;
 
@@ -79,7 +79,7 @@ class LieuModel extends Database {
 
         $req = $this->db->prepare($sqlQuery);
         $req->execute(['lon' => $longitude, 'lat' => $latitude]);
-        $data = $req->fetch(PDO::FETCH_ASSOC);
+        $data = $req->fetch(\PDO::FETCH_ASSOC);
 
         return $data;
 
