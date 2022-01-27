@@ -15,13 +15,12 @@ $mj = MeteoJour($Lieux[0]['libelle_lieu']);
   <div class="row">   
     
    <?php $i =0;
-
    foreach($Lieux as $lieu):
     if ($i >= 3) { break;}                 
-    $mj = MeteoJour($lieu['libelle_lieu']);
+    $mj = MeteoJour($lieu['libelle_lieu']); 
     ?>
       <div class="col-lg-4">
-        <div class="rond-lieu" ></div> 
+        <div class="rond-lieu" > <img class="" src="assets/picture/<?php echo $mj['icon']; ?>.png"></div> 
        <strong><h2><?php echo $lieu['libelle_lieu']?></h2></strong> 
         <h3><p><?php echo $mj['temperature']?> ° C</p></h3>
        <h4> <p><?php echo $mj['description']?></p></h4>
@@ -31,6 +30,7 @@ $mj = MeteoJour($Lieux[0]['libelle_lieu']);
     endforeach ; ?>
   </div>
 </div>
+
 
 
 <div class="container py-4">
