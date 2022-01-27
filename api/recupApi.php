@@ -47,3 +47,6 @@ foreach ($Lieux as $lieu) {
 
     echo 'Erreur enregistrement : '. $e -> getMessage(); 
 }
+
+
+
