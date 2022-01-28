@@ -82,15 +82,27 @@ class MesureModel extends Database {
 
     }
 
-    public function topChaud ($libelleLieu) {
+    public function topChaudSemaine () {
 
-      
-        $sqlQuery = 'SELECT max(temperature) AS maxtemp, date_mesure FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu GROUP BY date_mesure';
+        $date = date('Y-m-d');
+        $date7 = date('Y-m-d', strtotime($date. ' - 7 days'));
+
+        $sqlQuery = 'SELECT max(temperature) AS maxtemp, date_mesure, libelle_lieu FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE date_mesure BETWEEN :date7 AND :date_jour GROUP BY date_mesure,libelle_lieu';
         $req = $this->db->prepare($sqlQuery);
-        $req->execute(['lieu' => $libelleLieu]);
+        $req->execute(['date_jour' => $date, 'date7' => $date7]);
         $data = $req->fetchAll(\PDO::FETCH_ASSOC);
+        $hot = ['maxtemp' => -100, 'lieu' => '', 'jour' => ''];
 
-        return $data;
+        foreach ($data as $dat) {
+
+            if ($dat['maxtemp'] > $hot['maxtemp']) {
+                $hot['maxtemp'] = $dat['maxtemp'];
+                $hot['lieu'] = $dat['libelle_lieu'];
+                $hot['jour'] = $dat['date_mesure'];
+            }
+        }
+
+        return $hot;
 
     }
 
@@ -103,6 +115,31 @@ class MesureModel extends Database {
         $data = $req->fetchAll(\PDO::FETCH_ASSOC);
 
         return $data;
+
+    }
+
+    public function topFroidSemaine () {
+
+        $date = date('Y-m-d');
+        $date7 = date('Y-m-d', strtotime($date. ' - 7 days'));
+
+        $sqlQuery = 'SELECT max(temperature) AS mintemp, date_mesure, libelle_lieu FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE date_mesure BETWEEN :date7 AND :date_jour GROUP BY date_mesure,libelle_lieu';
+        $req = $this->db->prepare($sqlQuery);
+        $req->execute(['date_jour' => $date, 'date7' => $date7]);
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
+        $cold = ['mintemp' => 100, 'lieu' => '', 'jour' => ''];
+
+        foreach ($data as $dat) {
+
+            if ($dat['mintemp'] < $cold['mintemp']) {
+                $cold['mintemp'] = $dat['mintemp'];
+                $cold['lieu'] = $dat['libelle_lieu'];
+                $cold['jour'] = $dat['date_mesure'];
+
+            }
+        }
+
+        return $cold;
 
     }
 
