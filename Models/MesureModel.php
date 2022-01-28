@@ -106,7 +106,7 @@ class MesureModel extends Database {
 
     }
 
-    public function statSemaine ($date_choisie,$date_ancienne,$lieu) {
+    public function statDuree ($date_choisie,$date_ancienne,$lieu) {
 
           
         $sqlQuery = 'SELECT temperature, pluie_h, vitesse_vent, visibilite, date_mesure FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu AND date_mesure BETWEEN :date_ancienne AND :date_choisie ORDER BY date_mesure';
