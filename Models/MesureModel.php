@@ -93,6 +93,20 @@ class MesureModel extends Database {
         return $data;
 
     }
+
+    public function statSemaine ($date_choisie,$date_ancienne,$lieu) {
+
+          
+        $sqlQuery = 'SELECT temperature, pluie_h, vitesse_vent, visibilite, date_mesure FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu AND date_mesure BETWEEN :date_ancienne AND :date_choisie ORDER BY date_mesure';
+        $req = $this->db->prepare($sqlQuery);
+        $req->execute(['lieu' => $lieu, 'date_ancienne' => $date_ancienne, 'date_choisie' => $date_choisie]);
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $data;
+
+    }
+
+    
     
     
 }
