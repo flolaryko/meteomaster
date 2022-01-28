@@ -1,21 +1,15 @@
-
-
-
 <?php
 require_once('Models/MesureModel.php'); 
 require_once("Models/LieuModel.php");
+require_once("Controllers/LieuController.php");
+require_once("Controllers/MesureController.php");
 
-$unLieu= new LieuModel();
-$uneMesure = new MesureModel();  
-
-$lieux= $unLieu->All_Lieux(); // liste lieu select 
 
 if(isset($_POST['lieu'],$_POST['date'])): //controle des champ vide
 $data = $uneMesure -> Une_Mesure($_POST['lieu'],$_POST['date']);?>
 <script>var dataRecu = <?php echo json_encode($data)?> </script>
 <?php endif?>
 
-    
 
 <?php $title = 'Détail graphique'; ?>
 <?php ob_start(); ?>
@@ -44,10 +38,25 @@ $data = $uneMesure -> Une_Mesure($_POST['lieu'],$_POST['date']);?>
 
 <div id="chartdiv"></div>
 
+<?php // #8ed1fc bleu graph ?>
+<div class="container py-4">
+    <div class="p-5 mb-4 bg-light rounded-3" >
+      <div class="container-fluid py-5" style="color: white;">
+        <h1 class="display-5 fw-bold">Informations supplémentaires </h1>
+        <p class="col-md-8 fs-4" color:white>Nébulosité (octa) : <?php echo $data['nebulosite'];?>
+          <br> Pression (hPa) : <?php echo $data['pression'];?>
+          <br> Visibilité (m) : <?php echo $data['visibilite'];?>
+          <br> Levé du soleil : <?php echo $data['leve_soleil'];?>
+          <br> Couché de soleil : <?php echo $data['couche_soleil'];?>
+        </p>
+        
+      </div>
+    </div>
+</div>
 
 
 <?php require_once('footerView.php');?>
 
-<?php $content = ob_get_clean(); ?> <!-- tout le code enttre ob start et ob get clean sera dans $content-->
+<?php $content = ob_get_clean(); ?> 
 
 <?php require_once('template.php'); ?>

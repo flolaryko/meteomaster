@@ -30,10 +30,7 @@ am5.ready(function() {
     x: am5.p50
   }))
   
-  //transfert car php tab est en string
   
-
-
   // Data
   var data = [{
     mesure: "Température (°C)",

@@ -48,7 +48,7 @@
  style="margin: 0 auto;
      width: 300px;">
 
-   <img class="mb-4" src="assets/picture/point.jpg" alt="" width="90" height="50">
+   <img class="mb-4" src="assets/picture/point.png" alt="" width="90" height="50">
     <h1 class="h3 mb-3 fw-normal">Enregistrer un lieu</h1>
 
     <div class="form-floating">

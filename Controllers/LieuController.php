@@ -9,3 +9,5 @@ function Nomlieux() {
     
     return $NomLieux;
 } 
+$unLieu= new LieuModel();
+$lieux= $unLieu->All_Lieux();
