@@ -23,8 +23,8 @@ $Lieux = Nomlieux();
    <!-- bloc rectangle--> 
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5" style="color: white;">
-        <h1 class="display-5 fw-bold">Exemple de top</h1>
-        <p class="col-md-8 fs-4" color: white>tDuplexque isdem diebus acciderat malum, quod et Theophilum insontem atrox interceperat casus, et Serenianus dignus exsecratione cunctorum, innoxius, modo non reclamante publico vigore, discessit.</p>
+        <h1 class="display-5 fw-bold">Visualisation méteo</h1>
+        <p class="col-md-8 fs-4" color: white>Choisissez une période et visualisez une ou plusieurs données météorologiques parmi celles proposées :</p>
         <button class="btn btn-outline-light" type="button">Voir le graphique »</button>
       </div>
     </div>
@@ -36,16 +36,16 @@ carré-->
     <div class="row align-items-md-stretch">
       <div class="col-md-6">
         <div class="h-100 p-5 text-white bg-dark rounded-3" style="background-color: #003f89!important;">
-          <h2>top froid</h2>
-          <p> Le jour le plus froid de la semaine est le <?php echo $cold['jour'];?> situé à  <?php echo $cold['lieu'];?> avec une température de <?php echo $cold['mintemp'];?>°C </p>
+          <h2>Jour le plus froid de la semaine</h2>
+          <p>Date : <?php echo $cold['jour'];?> <br> Lieu :  <?php echo $cold['lieu'];?> <br> Température : <?php echo $cold['mintemp'];?>°C </p>
           <button class="btn btn-outline-light" type="button">Voir le graphique »</button>
         </div>
       </div>
 <!-- bloc carre--> 
       <div class="col-md-6">
         <div class="h-100 p-5 bg-light border rounded-3">
-          <h2>Exemple de top 3</h2>
-          <p>Duplexque isdem diebus acciderat malum, quod et Theophilum insontem atrox interceperat casus, et Serenianus dignus exsecratione cunctorum, innoxius, modo non reclamante publico vigore, discessit.</p>
+          <h2>Jour le plus chaud de la semaine</h2>
+          <p>Date : <?php echo $hot['jour'];?> <br> Lieu :  <?php echo $hot['lieu'];?> <br> Température : <?php echo $hot['maxtemp'];?>°C</p>
           <button class="btn btn-outline-secondary" type="button">Voir le graphique » </button>
         </div>
       </div>

@@ -30,7 +30,7 @@ foreach ($Lieux as $lieu) {
         <div class="rond-lieu" > <img class="" src="assets/picture/<?php echo $iconMeteo; ?>.png"></div> 
        <strong><h2><?php echo $lieu['libelle_lieu']?></h2></strong> 
         <h3><p><?php echo $temperature?> ° C</p></h3>
-       <h4> <p><?php echo $descriptionMeteo?></p></h4>
+       <h4> <p><?php echo ucfirst($descriptionMeteo)?></p></h4>
         <p><a class="btn btn-secondary" href="#">Détails »</a></p>
         </div> 
 <?php 

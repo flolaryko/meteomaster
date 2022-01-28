@@ -20,6 +20,6 @@ function topChaud() {
     
     return $Mesure;
 } 
-
+$hot =topChaud();
 
 
