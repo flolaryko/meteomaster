@@ -123,7 +123,7 @@ class MesureModel extends Database {
         $date = date('Y-m-d');
         $date7 = date('Y-m-d', strtotime($date. ' - 7 days'));
 
-        $sqlQuery = 'SELECT max(temperature) AS mintemp, date_mesure, libelle_lieu FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE date_mesure BETWEEN :date7 AND :date_jour GROUP BY date_mesure,libelle_lieu';
+        $sqlQuery = 'SELECT min(temperature) AS mintemp, date_mesure, libelle_lieu FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE date_mesure BETWEEN :date7 AND :date_jour GROUP BY date_mesure,libelle_lieu';
         $req = $this->db->prepare($sqlQuery);
         $req->execute(['date_jour' => $date, 'date7' => $date7]);
         $data = $req->fetchAll(\PDO::FETCH_ASSOC);
