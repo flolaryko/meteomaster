@@ -19,6 +19,18 @@ class MesureModel extends Database {
         return $data;
 
     }
+    public function All_Nom_Mesure () {
+
+       
+        $sqlQuery = "SHOW COLUMNS FROM mesure WHERE Field not in ('id_mesure','id_meteo','id_lieu') ";
+        $req = $this->db->prepare($sqlQuery);
+        $req->execute();
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
+        
+        return $data;
+
+    }
+
 
     public function Une_Mesure ($libelleLieu,$date_mesure) {
 
@@ -26,6 +38,21 @@ class MesureModel extends Database {
         $sqlQuery = 'SELECT * FROM mesure JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu AND date_mesure = :date_mesure';
         $req =$this->db->prepare($sqlQuery);
         $req->execute(['lieu' => $libelleLieu, 'date_mesure'=> $date_mesure]);
+        $data = $req->fetch(\PDO::FETCH_ASSOC);
+
+        return $data;
+
+    }
+
+    public function Une_Mesure_Comp ($libelleLieu,$dateDebut, $dateFin,$mesure) {
+
+      
+        $sqlQuery = 'SELECT'.$mesure.', date_mesure FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu AND date_mesure BETWEEN :dateDebut AND :dateFIN  ';
+        $req =$this->db->prepare($sqlQuery);
+        $req->execute(['lieu' => $libelleLieu,
+                        'dateDebut'=>$dateDebut,
+                         'dateFin'=>$dateFin,
+                          ]);
         $data = $req->fetch(\PDO::FETCH_ASSOC);
 
         return $data;

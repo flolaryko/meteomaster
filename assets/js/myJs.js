@@ -1,3 +1,5 @@
+
+// graph recherche
 am5.ready(function() {
 
   // Create root element
@@ -159,6 +161,10 @@ am5.ready(function() {
   chart.appear(1000, 100);
   
   }); // end am5.ready()
+
+
+
+
 
 
 
