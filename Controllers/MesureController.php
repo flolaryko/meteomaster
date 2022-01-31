@@ -1,7 +1,7 @@
 <?php
 
 require ('__DIR__/../Models/MesureModel.php');
-
+$uneMesure = new MesureModel();
 
 function topFroidS(){
 $uneMesure = new MesureModel();  

@@ -43,11 +43,11 @@ $data = $uneMesure -> Une_Mesure($_POST['lieu'],$_POST['date']);?>
     <div class="p-5 mb-4 bg-light rounded-3" >
       <div class="container-fluid py-5" style="color: white;">
         <h1 class="display-5 fw-bold">Informations supplémentaires </h1>
-        <p class="col-md-8 fs-4" color:white>Nébulosité (octa) : <?php echo $data['nebulosite'];?>
-          <br> Pression (hPa) : <?php echo $data['pression'];?>
-          <br> Visibilité (m) : <?php echo $data['visibilite'];?>
-          <br> Levé du soleil : <?php echo $data['leve_soleil'];?>
-          <br> Couché de soleil : <?php echo $data['couche_soleil'];?>
+        <p class="col-md-8 fs-4" color:white>Nébulosité (octa) : <?php echo $data['nebulosite'] = isset($data['nebulosite']) ? $data['nebulosite'] : 'Aucune donnée';?>
+          <br> Pression (hPa) : <?php echo $data['pression'] = isset($data['pression']) ? $data['pression'] : 'Aucune donnée' ;?>
+          <br> Visibilité (m) : <?php echo $data['visibilite'] = isset($data['visibilite']) ? $data['visibilite'] : 'Aucune donnée';?>
+          <br> Lever du soleil : <?php echo $data['leve_soleil'] = isset($data['leve_soleil']) ? $data['leve_soleil'] : 'Aucune donnée';?>
+          <br> Coucher du soleil : <?php echo $data['couche_soleil'] = isset($data['couche_soleil']) ? $data['couche_soleil'] : 'Aucune donnée';?>
         </p>
         
       </div>

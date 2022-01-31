@@ -19,7 +19,7 @@
         <div class="container">
           <div class="carousel-caption">
             <h1>MéteoScan</h1>
-            <p>Vous donne les données météorologique en temps réel ! </p>
+            <p>Vous donne les données météorologiques en temps réel ! </p>
             <!--<p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>-->
           </div>
         </div>
