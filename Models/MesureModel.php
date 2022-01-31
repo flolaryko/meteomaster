@@ -47,13 +47,13 @@ class MesureModel extends Database {
     public function Une_Mesure_Comp ($libelleLieu,$dateDebut, $dateFin,$mesure) {
 
       
-        $sqlQuery = 'SELECT'.$mesure.', date_mesure FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu AND date_mesure BETWEEN :dateDebut AND :dateFIN  ';
+        $sqlQuery = 'SELECT '.$mesure.', date_mesure FROM mesure INNER JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu AND date_mesure BETWEEN :dateDebut AND :dateFin  ';
         $req =$this->db->prepare($sqlQuery);
         $req->execute(['lieu' => $libelleLieu,
                         'dateDebut'=>$dateDebut,
                          'dateFin'=>$dateFin,
                           ]);
-        $data = $req->fetch(\PDO::FETCH_ASSOC);
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
 
         return $data;
 
