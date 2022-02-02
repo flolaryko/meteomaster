@@ -15,7 +15,6 @@
      <script src="assets/js/de_DE.js"></script>
      <script src="assets/js/germanyLow.js"></script>
      <script src="assets/js/index.js"></script>
-     <script src="assets/js/myJs.js"></script>
      <script src="assets/js/notosans-sc.js"></script>
      <script src="assets/js/xy.js"></script>
    

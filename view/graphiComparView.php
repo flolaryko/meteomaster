@@ -76,11 +76,11 @@ root.dateFormatter.setAll({
 var data = [];
 dataComp.forEach(function(item){
 
-    var temp = parseFloat(item["mesure"]); // conversion pour float 
+    var mesure = parseFloat(item["mesure"]); // conversion pour float 
 
     data.push({    
         date: item["date_mesure"],
-        value: temp
+        value: mesure
     });
 });
 
