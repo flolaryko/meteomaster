@@ -77,9 +77,10 @@ var data = [];
 dataComp.forEach(function(item){
 
     var temp = parseFloat(item["mesure"]); // conversion pour float 
+    var datemes = new Date (new Date(item["date_mesure"]).toDateString() + ' ' + item["heure_mesure"]);
 
     data.push({    
-        date: item["date_mesure"],
+        date: datemes,
         value: temp
     });
 });
@@ -107,9 +108,12 @@ var xAxis = chart.xAxes.push(
     maxDeviation: 0.5,
     groupData: false,
     baseInterval: {
-      timeUnit: "day",
+      timeUnit: "hour",
       count: 1
-    },
+    }, gridIntervals: [
+      { timeUnit: "hour", count: 1 },
+      { timeUnit: "day", count: 1 }     
+    ],
     renderer: am5xy.AxisRendererX.new(root, {
       pan:"zoom",
       minGridDistance: 50
