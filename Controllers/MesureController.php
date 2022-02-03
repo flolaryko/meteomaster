@@ -1,6 +1,4 @@
 <?php
-$jour = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-
 require ('__DIR__/../Models/MesureModel.php');
 $uneMesure = new MesureModel();
 
