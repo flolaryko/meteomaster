@@ -170,6 +170,17 @@ class MesureModel extends Database {
 
     }
 
+    public function dateComplete (string $datedujour) {
+
+        $jour = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+        $mois = ["","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+        
+        $dateC = $jour[date('w', strtotime($datedujour))]." ".date('d', strtotime($datedujour))." ".$mois[date('n', strtotime($datedujour))]." ".date('Y', strtotime($datedujour));
+    
+        return $dateC;
+
+    }
+
     
     
     

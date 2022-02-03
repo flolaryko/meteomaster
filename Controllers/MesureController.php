@@ -1,4 +1,5 @@
 <?php
+$jour = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
 
 require ('__DIR__/../Models/MesureModel.php');
 $uneMesure = new MesureModel();
@@ -13,6 +14,7 @@ $cold=$uneMesure->topFroidSemaine();
 return $cold;
 }
 $cold=topFroidS();
+$colddate = $uneMesure -> dateComplete($cold["jour"]);
 
 
 function topChaud() {
@@ -23,7 +25,7 @@ function topChaud() {
     return $Mesure;
 } 
 $hot =topChaud();
-
+$hotdate = $uneMesure -> dateComplete($hot["jour"]);
 
 function allNomMesure(){
     $allMesure=new MesureModel();
