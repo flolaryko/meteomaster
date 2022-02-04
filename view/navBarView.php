@@ -11,15 +11,20 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php?page=graphicView">Rechercher</a>
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-bs-toggle="dropdown" aria-expanded="false">Rechercher</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown10">
+                <li><a class="dropdown-item" href="index.php?page=graphicView">Par lieu</a></li>
+                <li><a class="dropdown-item" href="index.php?page=graphiComparView">Par période</a></li>
+                
+              </ul>
             </li>
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
               <ul class="dropdown-menu" aria-labelledby="dropdown10">
                 <li><a class="dropdown-item" href="index.php?page=ajouLieuView">Enregistrer un lieu</a></li>
-               <!-- <li><a class="dropdown-item" href="#">action 2</a></li>
-                <li><a class="dropdown-item" href="#">action 3</a></li>-->
               </ul>
             </li>
           </ul>

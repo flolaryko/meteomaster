@@ -10,15 +10,18 @@
        <link rel=" stylesheet" type="text/css" href="assets/css/style.css">
         <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-        <!-- pour le graphique -->
+        <!-- pour le graphique comp -->
      <script src="assets/js/Animated.js"></script>
      <script src="assets/js/de_DE.js"></script>
      <script src="assets/js/germanyLow.js"></script>
      <script src="assets/js/index.js"></script>
      <script src="assets/js/notosans-sc.js"></script>
      <script src="assets/js/xy.js"></script>
-   
-    </head>
+   <!--icon-->
+    <script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" ></script>
+    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
+
+</head>
         
     <body>
         
