@@ -1,8 +1,9 @@
 <?php
+// récupération des données méteo et ajout dans la base
 require('../Models/LieuModel.php');
-require('../Models/MesureModel.php'); // graphique
+require('../Models/MesureModel.php'); 
 require('../Models/MeteoModel.php');
-$uneMesure = new MesureModel(); // graphique
+$uneMesure = new MesureModel(); 
 $uneMeteo = new MeteoModel();
 $unLieu = new LieuModel();
 
