@@ -1,14 +1,13 @@
 <?php
+// récupération de la météo du jour 
 require_once('Models/LieuModel.php');
-require_once('Models/MesureModel.php'); // graphique
-require_once('Models/MeteoModel.php');
-$uneMesure = new MesureModel(); // graphique
-$uneMeteo = new MeteoModel();
 $unLieu = new LieuModel();
 
 
 
-$Lieux = $unLieu -> All_Lieux();
+$Lieux = $unLieu -> All_Lieux(); // appeler tout les lieux
+
+// chercher la méteo pour les 3 premiers lieux de l'accueil
 
 try {
     $i = 0;
