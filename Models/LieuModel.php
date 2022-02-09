@@ -17,7 +17,7 @@ class LieuModel extends Database {
         $sqlQuery = 'SELECT * FROM lieu';
         $req = $this->db->prepare($sqlQuery);
         $req->execute();
-        $data = $req->fetchAll();
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
 
         return $data;
 
@@ -66,13 +66,25 @@ class LieuModel extends Database {
         $sqlQuery = 'SELECT libelle_lieu FROM lieu';
         $req = $this->db->prepare($sqlQuery);
         $req->execute();
-        $data = $req->fetchAll(PDO::FETCH_ASSOC);
+        $data = $req->fetchAll(\PDO::FETCH_ASSOC);
 
         return $data;
 
     }
 
-    public function Select_Lieu ($id = NULL, $latitude = NULL, $longitude = NULL) {} // à faire
+    public function idLieu($longitude, $latitude) {
+
+       
+        $sqlQuery = 'SELECT id_lieu FROM lieu  WHERE longitude = :lon AND latitude = :lat';
+
+        $req = $this->db->prepare($sqlQuery);
+        $req->execute(['lon' => $longitude, 'lat' => $latitude]);
+        $data = $req->fetch(\PDO::FETCH_ASSOC);
+
+        return $data;
+
+
+    }
 
     
 

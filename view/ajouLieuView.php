@@ -1,43 +1,6 @@
 <?php 
 
 
-	if(isset($_POST['libelle_lieu'])){
-		// Vérification de la validité des informations
-		$libelle_lieu = $_POST['libelle_lieu'];
-		$longitude = $_POST['longitude'];
-		$latitude = $_POST['latitude'];
-		
-		try
-		{
-			$bdd = new PDO('mysql:host=localhost;dbname=meteosnac;charset=utf8', 'root', '');
-		}
-		catch (Exception $e)
-		{
-			die('Erreur : ' . $e->getMessage());
-		}
-			
-		// Insertion
-		$req = $bdd->prepare('INSERT INTO lieu (libelle_lieu, longitude, latitude) VALUES(:libelle_lieu, :longitude, :latitude)');
-		
-		$result = $req->execute(
-			[
-				'libelle_lieu' => $libelle_lieu,
-				'longitude' => $longitude,
-				'latitude' => $latitude
-			]
-		);
-
-		if($result)
-		{
-			echo "Nouveau lieu enregistre";
-			
-		}
-		else
-		{
-			echo "Veuillez bien remplir les champs";
-		}
-		
-	}
 ?>
 
 <?php $title = 'Enregistrer lieu'; ?>
@@ -48,7 +11,7 @@
  style="margin: 0 auto;
      width: 300px;">
 
-   <img class="mb-4" src="assets/picture/point.jpg" alt="" width="90" height="50">
+   <img class="mb-4" src="assets/picture/point.png" alt="" width="90" height="50">
     <h1 class="h3 mb-3 fw-normal">Enregistrer un lieu</h1>
 
     <div class="form-floating">
@@ -70,6 +33,7 @@
    
 </form>
  </div>
+ <br>
 
 <?php require_once("footerView.php")?>
 

@@ -5,7 +5,7 @@ height:50px;">
   <footer class="container"> 
 
    <strong><p>© 2022- Ville de Marseille</p></strong>
-    <a href="accueilView.php"><button class="btn btn-outline-secondary" type="button" href="accueilView.php"> Retour</button></a>
+    <a href="index.php?page=accueilView"><button class="btn btn-outline-secondary" type="button"> Retour</button></a>
    
   </footer>
 </nav>
