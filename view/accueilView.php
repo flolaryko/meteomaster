@@ -1,4 +1,5 @@
-<?php $title = 'MétéoScan'; 
+<?php 
+$title = 'MétéoScan'; 
 setlocale (LC_TIME, 'fr_FR.utf8','fra');
 $Lieux = Nomlieux();
 
