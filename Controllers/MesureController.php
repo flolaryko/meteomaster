@@ -12,6 +12,8 @@ $cold=$uneMesure->topFroidSemaine();
 return $cold;
 }
 $cold=topFroidS();
+$cold['lieu'] = $cold['lieu'] == "" ? "Aucun lieu pour cette période" : $cold['lieu'];
+$cold['mintemp'] = $cold['mintemp']  == 100 ? "Aucune température disponible" : $cold['mintemp'] ;
 $colddate = $uneMesure -> dateComplete($cold["jour"]);
 
 // récupérer le jour le plus chaud
@@ -23,6 +25,8 @@ function topChaud() {
     return $Mesure;
 } 
 $hot =topChaud();
+$hot['lieu'] = $hot['lieu'] == "" ? "Aucun lieu pour cette période" : $hot['lieu'];
+$hot['maxtemp'] = $hot['maxtemp'] == -100 ? "Aucune température disponible" : $hot['maxtemp'];
 $hotdate = $uneMesure -> dateComplete($hot["jour"]);
 
 // récupérer les noms de champs de la table mesure

@@ -1,13 +1,16 @@
 <?php 
+require_once('Controllers/LieuController.php');
+if (isset($_POST['libelle_lieu'], $_POST['longitude'],$_POST['latitude'])) : 
 
-
-?>
+  $ajoutLieu = $unLieu -> Ajouter_Lieu($_POST['libelle_lieu'], $_POST['longitude'],$_POST['latitude']); ?>
+  <div class="alert alert danger"><?php echo "Ajout réussi !" ?></div>
+<?php endif ?>
 
 <?php $title = 'Enregistrer lieu'; ?>
 <?php ob_start(); ?>
 <?php require_once('navBarView.php')?>;
 
-<form method="post" action="ajouLieuView.php"
+<form method="post" action=""
  style="margin: 0 auto;
      width: 300px;">
 
@@ -29,7 +32,7 @@
       <label for="floatingPassword">Latitude</label>
     </div>
    <br>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Enregitrer</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Enregistrer</button>
    
 </form>
  </div>
