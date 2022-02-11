@@ -35,7 +35,7 @@ $Lieux = Nomlieux();
       <div class="col-md-6">
         <div class="h-100 p-5 text-white bg-dark rounded-3" style="background-color: #003f89!important;">
           <h2>Jour le plus froid de la semaine</h2>
-          <p>Date : <?php echo $colddate;?> <br> Lieu :  <?php echo $cold['lieu'];?> <br> Température : <?php echo $cold['mintemp'];?>°C </p>
+          <p>Date : <?php echo $colddate;?> <br> Lieu :  <?php echo $cold['lieu'];?> <br> Température : <?php echo $cold['mintemp'];?> (°C) </p>
           
         </div>
       </div>
@@ -43,7 +43,7 @@ $Lieux = Nomlieux();
       <div class="col-md-6">
         <div class="h-100 p-5 bg-light border rounded-3">
           <h2>Jour le plus chaud de la semaine</h2>
-          <p>Date : <?php echo $hotdate;?> <br> Lieu :  <?php echo $hot['lieu'];?> <br> Température : <?php echo $hot['maxtemp'];?>°C</p>
+          <p>Date : <?php echo $hotdate;?> <br> Lieu :  <?php echo $hot['lieu'] ;?> <br> Température : <?php echo $hot['maxtemp'];?> (°C)</p>
           
         </div>
       </div>

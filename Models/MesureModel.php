@@ -170,7 +170,11 @@ class MesureModel extends Database {
 
     }
 
-    public function dateComplete (string $datedujour) {
+    public function dateComplete (string $datedujour ) {
+
+       if ($datedujour == "" ) {
+           return $dateC = "Aucune donnée pour cette période";
+       } else {
 
         $jour = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
         $mois = ["","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
@@ -178,6 +182,8 @@ class MesureModel extends Database {
         $dateC = $jour[date('w', strtotime($datedujour))]." ".date('d', strtotime($datedujour))." ".$mois[date('n', strtotime($datedujour))]." ".date('Y', strtotime($datedujour));
     
         return $dateC;
+
+       }
 
     }
 
