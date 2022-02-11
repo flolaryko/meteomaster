@@ -32,8 +32,8 @@ require_once('navBarView.php');?>
    <h1 class="h3 mb-3 fw-normal">Connexion admin</h1>
 
    <div class="form-floating">
-     <input type="text" name="login" class="form-control" id="floatingInput" placeholder="Nom d'utilisateur">
-     <label for="floatingInput">Login </label>
+     <input type="text" name="login" class="form-control" id="floatingInput" placeholder="identifiant">
+     <label for="floatingInput">Identifiant </label>
    </div>
 
    <div class="form-floating">
