@@ -37,7 +37,7 @@ require_once('navBarView.php');?>
    </div>
 
    <div class="form-floating">
-     <input type="text" name="password" class="form-control" id="floatingPassword" placeholder="Mot de passe">
+     <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Mot de passe">
      <label for="floatingPassword">Mot de passe</label>
    </div>
 
