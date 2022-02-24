@@ -8,17 +8,7 @@ class MesureModel extends Database {
         parent::__construct();
     }
 
-    public function All_Mesure () {
-
-       
-        $sqlQuery = 'SELECT * FROM mesure';
-        $req = $this->db->prepare($sqlQuery);
-        $req->execute();
-        $data = $req->fetchAll();
-
-        return $data;
-
-    }
+   
     public function All_Nom_Mesure () {
 
        
@@ -43,7 +33,17 @@ class MesureModel extends Database {
         return $data;
 
     }
+ public function All_Mesure () {
 
+       
+        $sqlQuery = 'SELECT * FROM mesure';
+        $req = $this->db->prepare($sqlQuery);
+        $req->execute();
+        $data = $req->fetchAll();
+
+        return $data;
+
+    }
     public function Une_Mesure_Comp ($libelleLieu,$dateDebut, $dateFin,$mesure) {
 
       

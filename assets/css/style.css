@@ -25,11 +25,13 @@
 .rond-lieu {
     width: 140px;
     height: 140px;
-    margin: 0 auto;
-    border-radius: 100%;
+    margin: 0 auto 6px auto;
+    border-radius: 35%;
     background-position: center;
     background-size: cover;
     transition: 0.3s ease;
+    background-color: grey;
+    padding-top: 17px;
 }
 
 /* css du graphic comparaison*/
