@@ -25,7 +25,7 @@ $Lieux = Nomlieux();
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5" style="color: white;">
         <h1 class="display-5 fw-bold">Visualisation méteo</h1>
-        <p class="col-md-8 fs-4" color: white>Choisissez une période ainsi qu'une donnée météorologique afin de constater son l'évolution ou bien choisissez un lieu et une date pour consulter toutes les données méteorologiques</p>
+        <p class="col-md-8 fs-4" color: white>Choisissez une période ainsi qu'une donnée météorologique afin de constater son évolution ou bien choisissez un lieu et une date pour consulter toutes les données méteorologiques</p>
         <button class="btn btn-outline-light" type="button" href="index.php?page=graphicView">Par lieu »</button>
         <button class="btn btn-outline-light" type="button" href="index.php?page=graphiComparView">Par période »</button>
       </div>

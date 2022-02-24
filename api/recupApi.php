@@ -32,7 +32,7 @@ foreach ($Lieux as $lieu) {
     $vitesseVent= isset($tab["current"]["wind_speed"]) ? $tab["current"]["wind_speed"] : 0;// en m/s
     $directionVent=isset($tab["current"]["wind_deg"]) ? $tab["current"]["wind_deg"] : 0; // en °
     $rafaleVent= isset($tab["current"]["wind_gust"]) ? $tab["current"]["wind_gust"] : 0 ; // en m/s
-    $libelleMeteo = $tab["current"]["weather"][0]["main"]; // faire un insert des 3 par dans la table méteo chaque jour et dans la clé étrangère id_meteo de mesure
+    $libelleMeteo = $tab["current"]["weather"][0]["main"]; 
     $descriptionMeteo = $tab["current"]["weather"][0]["description"];
     $iconMeteo = $tab["current"]["weather"][0]["icon"];
     $pluie = isset($tab["current"]["rain"]) ? $tab["current"]["rain"] : 0;

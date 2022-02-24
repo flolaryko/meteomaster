@@ -29,7 +29,7 @@ if(isset($_POST['lieu'],$_POST['dateFin'],$_POST['dateDebut'],$_POST['mesure']))
 
 
 
-<label for="floatingInput">Choisir un mesure à comparer </label>
+<label for="floatingInput">Choisir une mesure à comparer </label>
     <select name="mesure" class="form-control">
        <?php foreach ($allM as $allMe):  ?>  
           <option value="<?php echo $allMe['Field']?>"><?php echo $allMe['Field']?></option>

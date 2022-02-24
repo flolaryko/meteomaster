@@ -32,7 +32,7 @@ class MesureModel extends Database {
     }
 
 
-    public function Une_Mesure ($libelleLieu,$date_mesure) {
+    public function uneMesure ($libelleLieu,$date_mesure) {
 
       
         $sqlQuery = 'SELECT * FROM mesure JOIN lieu ON mesure.id_lieu = lieu.id_lieu WHERE libelle_lieu = :lieu AND date_mesure = :date_mesure';
@@ -179,7 +179,8 @@ class MesureModel extends Database {
         $jour = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
         $mois = ["","Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
         
-        $dateC = $jour[date('w', strtotime($datedujour))]." ".date('d', strtotime($datedujour))." ".$mois[date('n', strtotime($datedujour))]." ".date('Y', strtotime($datedujour));
+        $dateC = $jour[date('w', strtotime($datedujour))]." ".date('d', strtotime($datedujour))." ".$mois[date('n', strtotime($datedujour))]." "
+        .date('Y', strtotime($datedujour));
     
         return $dateC;
 
